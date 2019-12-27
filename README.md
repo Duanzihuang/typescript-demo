@@ -73,13 +73,33 @@ ts可以给某个常量或是变量显示的加上类型
 ```
 数组：
 	let fruits:string[] = ['apple','orange'];
+	let list:Arrray<number> = [1,2,3];
 ```
+> Tuple【元组】
+```
+作用：
+	数组的一种变种用法，让数组可以更加灵活，可以糅合各种数据类型
 
+语法：
+	let x:[string,number] = ['张三',18];
+```
 > 万金油类型【any】
 
 ```
-当我们不确定常量或是变量类型的时候，可以使用any
+当我们不确定常量或是变量类型的时候，可以使用any，它可以用于常量、变量、函数参数、函数返回值等多个地方
 	let goast:any = '幽灵'
+	
+	let list:any[] = [1,2,'张三',true];
+	let list:Array<any> = [1,2,'张三',true];
+```
+
+> Void
+
+```
+主要用于函数，当没有返回值的时候，可以把返回值写成Void
+	function hello():void {
+		xxx
+	}
 ```
 
 ### 函数
@@ -118,6 +138,53 @@ typescript函数的参数可以显式的写上类型，并且写好类型之后�
         title: 'ONE DAY',
         // content:'愉快的一天'
     }
+    
+可选属性
+	在变量的后面加上?
+	content?:string //?代表可选
+	
+只读属性
+	变量一旦赋值，则不允许修改
+	readonly paid?:boolean;
+	
+函数类型
+	interface可以描述函数的类型，设置函数的参数，参数类型及返回值类型
+	
+	interface Entity{
+    	title:string
+    }
+
+    interface EntityFunction{
+        (entity:Entity):string
+    }
+
+    let createPost: EntityFunction;
+    createPost = function (post:Entity):string{
+        return 'post has been create'
+    }
+
+    console.log(createPost({title:'test'}))
+    
+class实现接口
+	class一旦实现某个接口，就必须实现接口中的属性和方法，否则会报错
+	
+接口继承
+	一个接口继承了另外一个接口，那么就拥有另外一个接口的所有内容
+	
+	interface Entity{
+        title:string;
+    }
+
+    interface Product extends Entity{
+        price:number;
+    }
+
+    let product = <Product>{
+        title:'aaa',
+        price:12
+    };
+
+    console.log(product)
 ```
 
 ### Enums【枚举】
@@ -145,4 +212,6 @@ typescript函数的参数可以显式的写上类型，并且写好类型之后�
         status: PostStatus.Publish
     }
 ```
+
+### 
 
