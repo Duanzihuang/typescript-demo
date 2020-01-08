@@ -12,6 +12,9 @@ typescript语法练习及所写Demo
 使用:
 	tsc -help
 	tsc --version
+	
+参考：
+	https://www.tslang.cn/
 ```
 
 ### 编译
