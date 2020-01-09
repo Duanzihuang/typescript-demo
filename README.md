@@ -1,5 +1,5 @@
 # typescript-demo
-typescript语法练习及所写Demo
+## typescript语法练习及所写Demo
 
 ### 安装全局包
 
@@ -216,5 +216,12 @@ class实现接口
     }
 ```
 
-### 
+## Vue & React 中集成Typescript
 
+### Vue中集成Typescript
+
+参考：https://github.com/Duanzihuang/typescript-demo/tree/master/ts-vue
+
+### React中集成Typescript
+
+参考：https://github.com/Duanzihuang/typescript-demo/tree/master/ts-react
