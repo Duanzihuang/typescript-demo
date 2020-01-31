@@ -1,26 +1,29 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+    <!-- <HelloWorld msg="you are a good man" @test-emit="onTestEmit"/> -->
+    <HelloWorld msg="you are a good man" @sendparent="onTestEmit"/>
+    <hr>
+    <Decor message="春节快乐"/>
   </div>
 </template>
 
 <script lang="ts">
-// import { Component, Vue } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 import HelloWorld from "./components/HelloWorld.vue";
+import Decor from "./components/Decor.vue";
 
-// @Component({
-//   components: {
-//     HelloWorld,
-//   },
-// })
-// export default class App extends Vue {}
-
-export default {
+@Component({
   components: {
-    HelloWorld
+    HelloWorld,
+    Decor
   }
-};
+})
+export default class App extends Vue {
+  private onTestEmit(e:any){
+    window.console.log(e)
+  }
+}
 </script>
 
 <style>
